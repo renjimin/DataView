@@ -15,7 +15,7 @@ import echarts from 'echarts'
 // import animated from 'animate.css'
 
 Vue.prototype.$echarts = echarts;
-
+import 'swiper/dist/css/swiper.css';
 Vue.config.productionTip = false;
 // Vue.use(animated);
 

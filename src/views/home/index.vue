@@ -3,8 +3,20 @@
 		<div class="map">
 			<Head :headtitle='"长江大保护全景指挥"'/>
             <SubHead :subheadtitle='"沿江化工企业关改搬转工作专题展示"' />
-		  <img src="../../assets/pointOne.png" alt="" style="margin-left: 1688px;margin-top: 106.5px;">
-		  <img src="../../assets/pointTwo.png" alt="" style="position: absolute;margin-left: -1369px;margin-top: 230px;">
+		  <div class="point" style="top: 216px;left: 1968px;"></div>
+		  <div class="point" style="top: 617px;left: 1956px;"></div>
+		  <div class="point" style="top: 780px;left: 1993px;"></div>
+		  <div class="point" style="top: 783px;left: 1804px;"></div>
+		  <div class="point" style="top: 1005px;left: 1689px;"></div>
+		  <div class="point" style="top: 794px;left: 2350px;"></div>
+		  <div class="point" style="top: 505px;left: 2315px;"></div>
+		  <div class="point" style="top: 459px;left: 2573px;"></div>
+		  <div class="point" style="top: 781px;left: 2680px;"></div>
+		  <div class="point" style="top: 879px;left: 3140px;"></div>
+		  <div class="circleBox" style="left: 2110px;top: 642px;">
+		    <div class="textBox"></div>
+		    <div class="circleOne"></div>
+		  </div>
 		</div>
 		<div style="position: absolute;width: 100px;height: 100px;bottom: 20px;right: 1400px;background: #021e37;"></div>
         <div class="left">
@@ -39,9 +51,9 @@
                         </div>
                         <div class="item-text2">
                             <div class="title">累计采砂总量数</div>
-                            <div class="num"><numberCrow :startVal='0' :endVal='163' :duration='3000'></numberCrow><i>万吨</i></div>   
+                            <div class="num"><numberCrow :startVal='0' :endVal='163' :duration='3000'></numberCrow><i>万吨</i></div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="two-sanddata enforceData">
                     <Edging  :title="'2018-2019年执法相关数据'"  :edgingWidth="'497px'" />
@@ -110,21 +122,21 @@
                     <div class="implements-group">
                         <div class="implements-item1">
                             <div class="implements-num">157</div>
-                            <div class="cylinder"></div>  
-                        </div>     
+                            <div class="cylinder"></div>
+                        </div>
                         <div class="implements-item2">
                             <div  class="implements-num">475</div>
                             <div class="cylinder"></div>
-                        </div>   
+                        </div>
                          <div class="implements-item3">
                              <div  class="implements-num">145</div>
                             <div class="cylinder"></div>
-                        </div>                                              <div class="clear"></div>     
+                        </div>                                              <div class="clear"></div>
                         <div class="implements-year">
                             <span>2017年</span>
                             <span>2018年</span>
                             <span>2019年</span>
-                        </div>             
+                        </div>
                     </div>
                 </div>
                 <div class="dredge-data">
@@ -155,13 +167,13 @@
                         <!-- <div class="companydiV">
                                     <img class="imgcompany" src="img/微信图片_20190914143725.png" alt="">
                         </div>                          -->
-                    </div>               
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="fore-data">
                 <div class="clear-dredge">
-                    <Edging  :title="'清除“三无”采砂船数'"  :edgingWidth="'497px'" />   
+                    <Edging  :title="'清除“三无”采砂船数'"  :edgingWidth="'497px'" />
                     <div class="cleardredge-num">
                         <div class="round-ball">
                             <span class="effects">243</span>
@@ -175,7 +187,7 @@
                     </div>
                     <div class="cleardredge-circle1"></div>
                     <div class="cleardredge-circle2"></div>
-                    <div class="cleardredge-circle3"></div>                 
+                    <div class="cleardredge-circle3"></div>
                 </div>
                 <div class="illegal-num">
                     <Edging  :title="'非法涉砂船舶数量'"  :edgingWidth="'497px'" />
@@ -207,26 +219,48 @@
 			<!-- 水利厅右侧 -->
 			<div class="right">
 			  <div>
-			    <Edging  :title="'专项战役视频'"  :edgingWidth="'878px'" style="margin-top: 25px;" />
-			    <div style="width: 876px;height: 493px;margin-top: 8px;">
-			      <video id="videoOne" src="../../../public/img/20190909_105212.mp4" style="width: 876px;height: 493px;" autoplay controls muted></video>
+			    <Edging  :title="'专项战役视频'"  :edgingWidth="'878px'" style="margin-top: -40px;" />
+				<!-- 20190915 -->
+			    <div style="width: 876px;height: 493px;margin-top: 8px;position: relative;" @click="changeVideo(1)">
+			      <video id="videoOne" src="../../../public/img/20190909_105212.mp4" style="width: 876px;height: 493px;" autoplay muted loop></video>
+				  <div style="width: 876px;height: 493px;position: absolute;top: 0;" @click.stop="changeVideo(0)" v-if="stopVideo">
+			      <img src="../../assets/播放icon.png" alt="" style="margin-top: 222px;margin-left: 398px;">
+			    </div>
 			    </div>
 			  </div>
 			  <div>
 			    <Edging  :title="'图片对比'"  :edgingWidth="'878px'" style="margin-top: 25px;" />
 			    <div style="margin-top: 8px;width: 878px;height: 234px;">
 			      <div style="float: left;width: 435px;height: 234px;position: relative;">
+					<!-- 20190915 -->
+					<div class="swiper-container swiperOne" style="z-index: 0;">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理前1.jpg" alt="" style="width: 435px;height: 234px;"></div>
+					        <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理前2.jpg" alt="" style="width: 435px;height: 234px;"></div>
+					        <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理前3.jpg" alt="" style="width: 435px;height: 234px;"></div>
+					        <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理前4.jpg" alt="" style="width: 435px;height: 234px;"></div>
+					        <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理前5.jpg" alt="" style="width: 435px;height: 234px;"></div>
+					    </div>
+					</div>
 			        <div style="position: absolute;height: 55px;width: 100%;bottom: 0;">
 			          <div style="color: #fff;line-height: 55px;text-align: center;float: left;width: 139px;background: #4291c7;font-size: 34px;">改造前</div>
-			          <div style="width: 282px;line-height: 55px;padding-left: 14px;color: #fff;font-size: 20px;background: rgba(0,0,0,0.6);float: left;">采砂工程船拆解现场</div>
+			          <!-- <div style="width: 282px;line-height: 55px;padding-left: 14px;color: #fff;font-size: 20px;background: rgba(0,0,0,0.6);float: left;">采砂工程船拆解现场</div> -->
 			        </div>
-			        <img src="../../assets/图层10015.png" alt="">
 			      </div>
 			      <div style="float: left;width: 435px;height: 234px;margin-left: 8px;position: relative;">
-			        <img src="../../assets/图层10013拷贝.png" alt="">
+					<!-- 20190915 -->
+			        <div class="swiper-container swiperTwo" style="z-index: 0;">
+			            <div class="swiper-wrapper">
+			                <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理后1.jpg" alt="" style="width: 435px;height: 234px;"></div>
+			                <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理后2.jpg" alt="" style="width: 435px;height: 234px;"></div>
+			                <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理后3.jpg" alt="" style="width: 435px;height: 234px;"></div>
+			                <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理后4.jpg" alt="" style="width: 435px;height: 234px;"></div>
+			                <div class="swiper-slide" style="width: 435px;height: 234px;"><img src="../../assets/治理后5.jpg" alt="" style="width: 435px;height: 234px;"></div>
+			            </div>
+			        </div>
 			        <div style="position: absolute;height: 55px;width: 100%;bottom: 0;">
 			          <div style="color: #fff;line-height: 55px;text-align: center;float: left;width: 139px;background: #4291c7;font-size: 34px;">改造后</div>
-			          <div style="width: 282px;line-height: 55px;padding-left: 14px;color: #fff;font-size: 20px;background: rgba(0,0,0,0.6);float: left;">房县: 白鹭群居汉江流域马栏河</div>
+			          <!-- <div style="width: 282px;line-height: 55px;padding-left: 14px;color: #fff;font-size: 20px;background: rgba(0,0,0,0.6);float: left;">房县: 白鹭群居汉江流域马栏河</div> -->
 			        </div>
 			      </div>
 			    </div>
@@ -234,13 +268,18 @@
 			  <div>
 			    <Edging  :title="'新闻报道'"  :edgingWidth="'878px'" style="margin-top: 25px;" />
 			    <div style="position: relative;;width: 878px;height: 234px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);">
-			      <happy-scroll color="rgba(0,138,255,0.15)" size="10">
+			      <happy-scroll color="rgba(0,138,255,0.15)" size="10" right>
 			        <div style="width: 878px;height: 234px;z-index: 9;">
 			          <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">焦泰文调研厅及黄冈砂管执法基地</h5>
 			          <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
 			          <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;
-			                        margin-top: 4px;">（省水政监察总队）近日，厅党组成员、副厅长焦泰文到厅及黄冈市河道采砂管理执法基地调研。焦泰文登上执法基地执法趸船，查看了值班值守情况，详细询问了船上执法队员的工作及生活情况，与执法队员们一一握手慰问，感谢他们为长江大保护作出的贡献。看到执法基地扣押的采运砂船，焦泰文详细询问了船只管控情况。焦泰文对执法基地执法能力建设和执法工作给予了肯定。<br>
+			                        margin-top: 4px;margin-bottom: 30px;">（省水政监察总队）近日，厅党组成员、副厅长焦泰文到厅及黄冈市河道采砂管理执法基地调研。焦泰文登上执法基地执法趸船，查看了值班值守情况，详细询问了船上执法队员的工作及生活情况，与执法队员们一一握手慰问，感谢他们为长江大保护作出的贡献。看到执法基地扣押的采运砂船，焦泰文详细询问了船只管控情况。焦泰文对执法基地执法能力建设和执法工作给予了肯定。<br>
 			          焦泰文强调，河道采砂管理事关防洪安全、通航安全和生态安全，任务艰巨，责任重大，一定要认真落实长江大保护要求，严厉打击非法采砂行为，确保良好的河道采砂管理秩序。</p>
+					  <!-- 20190915 -->
+					  <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">湖北长江沿线近500家化工企业关改搬转任务清单发布</h5>
+					  <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
+					  <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;
+					                margin-top: 4px;margin-bottom: 40px;">按照《湖北省沿江化工企业关改搬转工作方案》（鄂政发〔2018〕24号）工作要求， 湖北省经济和信息化委员会会同省发改委、省住建厅、省环保厅、省安监局汇总审核各市州政府报送的沿江化工企业关改搬转工作方案及“一企一策”任务清单的基础上，形成《湖北省沿江化工企业关改搬转任务清单（征求意见稿）》，现予以公示。公示期为2018年9月30日至10月11日。</p>
 			        </div>
 			      </happy-scroll>
 			    </div>
@@ -256,6 +295,7 @@ import TurnCircle from '@/components/turn-circle/index'
 import numberCrow from '@/components/numberGrow/index'
 import SubHead from '@/components/subheading/index'
 import { HappyScroll } from 'vue-happy-scroll'
+import Swiper from 'swiper'; // 20190915
 import 'vue-happy-scroll/docs/happy-scroll.css'
 export default {
     components: {
@@ -264,7 +304,8 @@ export default {
         Edging,
         TurnCircle,
 		HappyScroll,
-        numberCrow
+        numberCrow,
+		Swiper
     },
     data() {
         return {
@@ -272,16 +313,39 @@ export default {
                 {img:'img/形状 1209.png',num:8612,unit:'次',desc:'日常执法巡查数量',key:1},
                 {img:'img/形状 1207.png',num:468,unit:'艘',desc:'集中监管采砂船舶数量',key:2},
                 {img:'img/形状 1208.png',num:41,unit:'个',desc:'建立联合执法驻守点数',key:3},
-            ]
+            ],
+            stopVideo:false
         }
     },
-    mounted() {
-        this.initData();
+    mounted () {
+      this.initData();
+      // 20190915
+      var mySwiper1 = new Swiper('.swiperOne', {
+        loop: true,
+        autoplay: true
+      })
+      var mySwiper2 = new Swiper('.swiperTwo', {
+        loop: true,
+        autoplay: true
+      })
+      mySwiper1.controller.control = mySwiper2;
+      mySwiper2.controller.control = mySwiper1;
     },
-    methods:{
-        initData() {
-            
+    methods: {
+      initData () {
+
+      },
+      // 20190915
+      changeVideo (e) {
+        var video1 = document.getElementById("videoOne");
+        if (e == 1) {
+          video1.pause();
+          this.stopVideo = true;
+        } else if (e == 0) {
+          video1.play();
+          this.stopVideo = false;
         }
+      }
     }
 }
 </script>
@@ -306,10 +370,10 @@ export default {
             display: inline-block;
             .basebg {
                 width: 1016px;
-                height: 196px;                
+                height: 196px;
                 background: url('../../assets/矩形 4.png');
                 .data-count {
-                    height: 196px;    
+                    height: 196px;
                     .item {
                         padding-top: 30px;
                         width: 33.333%;
@@ -323,20 +387,20 @@ export default {
                         }
                         .num {
                             font-family: DINNextW1G-BoldItalic;
-                            font-size: 70px;        
-                            color: #ffffff;               
+                            font-size: 70px;
+                            color: #ffffff;
                         }
                         .unit {
                             font-family: SourceHanSansCN-Medium;
-                            font-size: 34px;     
-                            color: #ffffff;                  
-                        } 
+                            font-size: 34px;
+                            color: #ffffff;
+                        }
                         div {
                             font-family: SourceHanSansCN-Medium;
-                            font-size: 28px; 
+                            font-size: 28px;
                             color: #80c5ff;
                             margin: 32px 0 30px;
-                        }                  
+                        }
                     }
                 }
             }
@@ -345,8 +409,8 @@ export default {
             margin-top: 21px;
             .one-sanddata {
                 width: 497px;
-                height: 280px;   
-                float: left;         
+                height: 280px;
+                float: left;
                 .basebg {
                     background: url('../../assets/背景宽234.png');
                     .item-text1 {
@@ -354,20 +418,20 @@ export default {
                         .title {
                             display: inline-block;
                             font-family: SourceHanSansCN-Medium;
-                            font-size: 28px;      
+                            font-size: 28px;
                             color: #80c5ff;
-                            margin-left: 20px; 
-                            margin-right: 53px;                     
+                            margin-left: 20px;
+                            margin-right: 53px;
                         }
                         .num {
                             display: inline-block;
                             font-family: DINNextW1G-BoldItalic;
-                            font-size: 70px;  
+                            font-size: 70px;
                             color:#ffffff;
                             i {
                                 font-family: SourceHanSansCN-Medium;
                                 font-size: 34px;
-                            }                          
+                            }
                         }
                     }
                     .item-text2 {
@@ -375,28 +439,28 @@ export default {
                         .title {
                             display: inline-block;
                             font-family: SourceHanSansCN-Medium;
-                            font-size: 28px;     
-                            color: #80c5ff; 
-                            margin-left: 20px;     
-                            margin-right: 70px;                    
+                            font-size: 28px;
+                            color: #80c5ff;
+                            margin-left: 20px;
+                            margin-right: 70px;
                         }
                         .num {
                             display: inline-block;
                             font-family: DINNextW1G-BoldItalic;
-                            font-size: 70px;  
+                            font-size: 70px;
                             color: #ffffff;
                             i {
                                 font-family: SourceHanSansCN-Medium;
                                 font-size: 34px;
-                            }                          
+                            }
                         }
-                    }                    
+                    }
                 }
             }
             .two-sanddata {
                 width: 497px;
-                height: 241px;   
-                float: left;   
+                height: 241px;
+                float: left;
                 margin-left: 25px;
             }
         }
@@ -405,8 +469,8 @@ export default {
             .implements-data {
                 float: left;
                 background: url('../../assets/背景窄282.png');
-                .implements-group {    
-                    height: 242px; 
+                .implements-group {
+                    height: 242px;
                      .implements-item1 {
                          position: relative;
                          height: 193px;
@@ -421,11 +485,11 @@ export default {
                             padding-top: 5px;
                             bottom: 0;
                             left: 0;
-                            background-image: linear-gradient(90deg, 
-                                #ff7b05 0%, 
+                            background-image: linear-gradient(90deg,
+                                #ff7b05 0%,
                                 #ffc280 100%);
                             color: #fff;
-                            animation: bounce-big1 5s  forwards; 
+                            animation: bounce-big1 5s  forwards;
                         }
                         .cylinder::before {
                             content: "";
@@ -433,33 +497,33 @@ export default {
                             width: 100%;
                             height: 16px;
                             border-radius: 100%;
-                            background-image: linear-gradient(-24deg, 
-                                #ff7b05 0%, 
+                            background-image: linear-gradient(-24deg,
+                                #ff7b05 0%,
                                 #ffc280 100%);
                             left: 0;
-                            top: -7px;                           
+                            top: -7px;
                         }
                         .cylinder:after{
                             background: inherit;
                             left: 0;
-                            bottom: -7px;                            
+                            bottom: -7px;
                             content: "";
                             position: absolute;
                             width: 100%;
                             height: 15px;
-                            border-radius: 100%;                       
-                        }     
+                            border-radius: 100%;
+                        }
                         .implements-num {
                             position: absolute;
                             top: 123px;
                             left:5px;
                             z-index:2;
                             font-family: DINNextW1G-Medium;
-                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7)); 
-                            font-size: 24px;         
-                            color: #ffffff;                   
-                        }         
-                     }  
+                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7));
+                            font-size: 24px;
+                            color: #ffffff;
+                        }
+                     }
                       .implements-item2 {
                          position: relative;
                          margin-left: 123px;
@@ -473,11 +537,11 @@ export default {
                             padding-top: 5px;
                             bottom: 0;
                             left: 0;
-                            background-image: linear-gradient(-90deg, 
-                                #56d7d2 0%, 
+                            background-image: linear-gradient(-90deg,
+                                #56d7d2 0%,
                                 #0cb281 100%);
                             color: #fff;
-                            animation: bounce-big2 5s  forwards; 
+                            animation: bounce-big2 5s  forwards;
                         }
                         .cylinder::before {
                             content: "";
@@ -485,33 +549,33 @@ export default {
                             width: 100%;
                             height: 16px;
                             border-radius: 100%;
-                            background-image: linear-gradient(139deg, 
-                                #56d7d2 0%, 
+                            background-image: linear-gradient(139deg,
+                                #56d7d2 0%,
                                 #0cb281 100%);
                             left: 0;
-                            top: -7px;                           
+                            top: -7px;
                         }
                         .cylinder:after{
                             background: inherit;
                             left: 0;
-                            bottom: -7px;                            
+                            bottom: -7px;
                             content: "";
                             position: absolute;
                             width: 100%;
                             height: 15px;
-                            border-radius: 100%;                       
-                        }                                                  
+                            border-radius: 100%;
+                        }
                         .implements-num {
                             position: absolute;
                             top: 9px;
                             left:5px;
                             z-index:2;
                             font-family: DINNextW1G-Medium;
-                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7)); 
-                            font-size: 24px;         
-                            color: #ffffff;                   
-                        } 
-                     }  
+                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7));
+                            font-size: 24px;
+                            color: #ffffff;
+                        }
+                     }
                       .implements-item3 {
                         position: relative;
                         height: 193px;
@@ -524,11 +588,11 @@ export default {
                             margin: 0;
                             padding-top: 5px;
                             bottom: 0;
-                            background-image: linear-gradient(90deg, 
-                                #0c9bff 0%, 
+                            background-image: linear-gradient(90deg,
+                                #0c9bff 0%,
                                 #7bd2ff 100%);
                             color: #fff;
-                            animation: bounce-big3 5s forwards; 
+                            animation: bounce-big3 5s forwards;
                         }
                         .cylinder::before {
                             content: "";
@@ -536,40 +600,40 @@ export default {
                             width: 100%;
                             height: 16px;
                             border-radius: 100%;
-                            background-image: linear-gradient(-24deg, 
-                                #0c9bff 0%, 
+                            background-image: linear-gradient(-24deg,
+                                #0c9bff 0%,
                                 #7bd2ff 100%);
                             left: 0;
-                            top: -7px;                           
+                            top: -7px;
                         }
                         .cylinder:after{
                             background: inherit;
                             left: 0;
-                            bottom: -7px;                            
+                            bottom: -7px;
                             content: "";
                             position: absolute;
                             width: 100%;
                             height: 15px;
-                            border-radius: 100%;                       
-                        } 
+                            border-radius: 100%;
+                        }
                          .implements-num {
                             position: absolute;
                             top: 124px;
                             left:5px;
                             z-index:2;
                             font-family: DINNextW1G-Medium;
-                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7)); 
-                            font-size: 24px;         
-                            color: #ffffff;                   
-                        }                                                        
-                     } 
+                            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.7));
+                            font-size: 24px;
+                            color: #ffffff;
+                        }
+                     }
                      @keyframes bounce-big1 {
                         0% {
                             height:0;
                         }
                         100% {
                             height: 37px;
-                        }                      
+                        }
                      }
                      @keyframes bounce-big2 {
                         0% {
@@ -577,7 +641,7 @@ export default {
                         }
                         100% {
                             height: 152px;
-                        }                      
+                        }
                      }
                      @keyframes bounce-big3 {
                         0% {
@@ -585,27 +649,27 @@ export default {
                         }
                         100% {
                             height: 42px;
-                        }                      
-                     }                                          
+                        }
+                     }
                     .implements-year {
                         margin-top: 14px;
                         height: 18px;
                         font-family: DINNextW1G-Medium;
-                        font-size: 18px;        
-                        color: #80c5ff;        
+                        font-size: 18px;
+                        color: #80c5ff;
                         span:nth-child(1) {
                             display: inline-block;
                             margin-left: 110px;
-                        } 
+                        }
                         span:nth-child(2) {
                             display: inline-block;
                             margin-left: 58px;
-                        }    
+                        }
                         span:nth-child(3) {
                             display: inline-block;
                             margin-left: 67px;
-                        }                                                               
-                 }                                                  
+                        }
+                 }
                 }
             }
             .dredge-data {
@@ -624,9 +688,9 @@ export default {
                             background: url('../../assets/多边形 1.png');
                             .dregge-bg2 {
                                 width: 92px;
-                                height: 106px;      
+                                height: 106px;
                                 margin-left: 16px;
-                                margin-top: 18px;                      
+                                margin-top: 18px;
                                 background: url('../../assets/多边形 1 拷贝.png');
                                 text-align: center;
                                 div:nth-child(1) {
@@ -636,9 +700,9 @@ export default {
                                 }
                                 div:nth-child(2) {
                                     font-family: DINNextW1G-Medium;
-                                    font-size: 18px;  
+                                    font-size: 18px;
                                     margin-top: 6px;
-                                    color: #ffffff; 
+                                    color: #ffffff;
                                 }
                             }
                         }
@@ -648,34 +712,34 @@ export default {
                     }
                     .dredge-ellipse {
                         margin-top: -10px;
-                        span:nth-child(1) { 
+                        span:nth-child(1) {
                             display: inline-block;
                             border-radius: 50%;
                             transform: scale(1,0.5);
                             width: 29px;
                             height:20px;
                             background-color: #71beff;
-                            opacity: 0.6;        
-                            margin-left: 164px;                    
+                            opacity: 0.6;
+                            margin-left: 164px;
                         }
-                        span:nth-child(2) { 
+                        span:nth-child(2) {
                             display: inline-block;
                             border-radius: 50%;
                             transform: scale(1,0.5);
                             width: 29px;
-                            height:20px;       
+                            height:20px;
                             background-color: #71beff;
-                            opacity: 0.6;                                   margin-left: 113px;  
-                        }                        
+                            opacity: 0.6;                                   margin-left: 113px;
+                        }
                     }
                     .companydiV{
                         transform: skewY(0) rotateZ(88deg) rotateX(8deg) rotateY(-79deg);
-                    }       
+                    }
                      .imgcompany{
                         /* transform: rotate(25deg); */
                         animation:100s rollImg linear infinite normal;
                         // transform: skewX(-45deg);
-                    }                     
+                    }
                     @keyframes rollImg {
                         0% {
                              transform :rotateZ(5deg);
@@ -683,7 +747,7 @@ export default {
                         100% {
                             transform :rotateZ(1000deg);
                         }
-                    }                              
+                    }
                 }
             }
         }
@@ -710,12 +774,12 @@ export default {
                         }
                         span:nth-child(1) {
                             font-family: DINNextW1G-Bold;
-                            font-size: 40px;        
-                            padding:29px 0 10px;                   
+                            font-size: 40px;
+                            padding:29px 0 10px;
                         }
                         span:nth-child(2) {
                             font-family: DINNextW1G-Medium;
-                            font-size: 18px;                            
+                            font-size: 18px;
                         }
                     }
                     .round-ball:nth-child(1) {
@@ -725,9 +789,9 @@ export default {
                     }
                     .round-ball:nth-child(2) {
                         margin-left: 38px;
-                        margin-top:18px;        
-                        animation: bounce-down2 5s linear infinite;          
-                    }                    
+                        margin-top:18px;
+                        animation: bounce-down2 5s linear infinite;
+                    }
                     @keyframes bounce-down1 {
                         25% {
                             transform: translateY(-10px);
@@ -738,7 +802,7 @@ export default {
                         75% {
                             transform: translateY(5px);
                         }
-                    }      
+                    }
                     @keyframes bounce-down2 {
                         25% {
                             transform: translateY(8px);
@@ -749,7 +813,7 @@ export default {
                         75% {
                             transform: translateY(-8px);
                         }
-                    }                                     
+                    }
                 }
                 .cleardredge-circle1 {
                     background: url('../../assets/873eb246309881adc7d1395fb1c25a9.png') no-repeat center;
@@ -762,8 +826,8 @@ export default {
                     margin-top: -165px;
                     background: url('../../assets/afdcf22ee52d17db663b35e611fa700.png') 50% 50% no-repeat;
                     // background-size: 35% 35%;
-                    opacity: 0;          
-                    animation: circle-a 4.5s ease-out  forwards infinite;       
+                    opacity: 0;
+                    animation: circle-a 4.5s ease-out  forwards infinite;
                 }
                 .cleardredge-circle3 {
                     width: 100%;
@@ -771,9 +835,9 @@ export default {
                     margin-top: -270px;
                     background: url('../../assets/afdcf22ee52d17db663b35e611fa700.png') 50% 50% no-repeat;
                     // background-size: 35% 35%;
-                    opacity: 0;          
-                    animation: circle-a 4.5s ease-out 3s forwards infinite;       
-                }                
+                    opacity: 0;
+                    animation: circle-a 4.5s ease-out 3s forwards infinite;
+                }
                 @keyframes circle-a {
                     0% {
                         transform: scale(.5);
@@ -795,11 +859,11 @@ export default {
                 float: left;
                 margin-left: 22px;
                 .illegal-item {
-                     margin-top:15px;    
+                     margin-top:15px;
                     .illegal-circle {
                         float: left;
                         width: 204px;
-                        height: 204px;                        
+                        height: 204px;
                     }
                      .illegal-circle:nth-child(1) {
                          margin: 0 35px 0 31px;
@@ -810,14 +874,14 @@ export default {
                     span {
                         display: inline-block;
                         font-family: DINNextW1G-Medium;
-                        font-size: 18px;     
-                        color: #ffffff;               
+                        font-size: 18px;
+                        color: #ffffff;
                     }
                     .illegalyear {
                         margin-left: 105px;
                         margin-right:185px;
                     }
-                }                
+                }
             }
         }
     }
@@ -825,12 +889,12 @@ export default {
         .box {
             width: 434px;
             height: 130px;
-            animation: move 5s linear infinite;    
+            animation: move 5s linear infinite;
             div{
                 width: 100px;
                 height: 100px;
                 float: left;
-            }       
+            }
             div:nth-child(1) {
                 transform: translateZ(120px);
                 background: url('../../assets/微信图片_20190912170942.png') no-repeat 0 0;
@@ -842,7 +906,7 @@ export default {
              div:nth-child(3) {
                 transform: translateZ(120px);
                 background: url('../../assets/微信图片_20190912170942.png') no-repeat 0 0;
-            }                               
+            }
         }
         @keyframes move {
             0% {
@@ -954,5 +1018,43 @@ export default {
 		margin-left: 7.5px;
 		margin-top: 2.5px;
 		border-radius: 50%;
+	}
+	.point{
+		width: 70px;
+		height: 90px;
+		background: url(../../assets/point1.png)no-repeat center;
+		position: absolute;
+		animation: jump .8s infinite;
+	}
+	.circleBox{
+	  position: absolute;
+	  width:216px;
+	  height:156px;
+	  .textBox{
+	    background: url(../../assets/宜昌56.png);
+	    width: 216px;
+	    height: 120px;
+	  }
+	  .circleOne{
+	    width: 70px;
+	    height: 34px;
+	    margin: 0 auto;
+	    background: url(../../assets/圈拷贝7.png) no-repeat center;
+	    animation:mymove 3s infinite;
+	    animation-direction:alternate;/*轮流反向播放动画。*/
+	    animation-timing-function: ease-in-out; /*动画的速度曲线*/
+	  }
+	}
+
+	@keyframes jump {
+	    0% {
+	        transform: translate(0px, 0px);
+	    }
+	    50% {
+	        transform: translate(0px, -10px);
+	    }
+	    100% {
+	        transform: translate(0px, 0px);
+	    }
 	}
 </style>
