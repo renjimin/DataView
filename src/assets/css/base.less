@@ -1,0 +1,45 @@
+@import "reset";
+// 用到什么字体引入什么字体
+@font-face {
+    font-family: DINNextW1G-BoldItalic;
+    src: url('../DIN/DINNextW1G-BoldItalic.otf')
+}
+@font-face {
+    font-family: DINNextW1G-Medium;
+    src: url('../DIN/DINNextW1G-Medium.otf')
+}
+@font-face {
+    font-family: DINNextW1G-Bold;
+    src: url('../DIN/DINNextW1G-Bold.otf')
+}
+
+@font-face {
+    font-family: SourceHanSansCN-Medium;
+    src: url('../SourceHanSansCN/SourceHanSansCN-Medium.otf')
+}
+@font-face {
+	font-family: SourceHanSansCN-Bold;
+    src: url('../SourceHanSansCN/SourceHanSansCN-Bold.otf')
+}
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/组 154.png');
+    // overflow: hidden;  
+	// 开发情况下去掉 ， 演示环境添加上去，不能有滚动条显示
+}
+
+#app {
+	width: 4800px;
+	height: 1350px;
+    font-family: 'arial, tahoma, helvetica, sans-serif'
+}
+.clear {
+    clear: both;
+}
+// 格子显示的背景色
+.effects {
+    text-shadow: 0px 0px 10px #0245a7, 0px 0px 20px #0245a7,0px 0px 30px #0245a7,0px 0px 40px #0245a7,0px 0px 50px #0245a7;
+}
