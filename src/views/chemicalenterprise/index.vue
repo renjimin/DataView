@@ -3,7 +3,29 @@
         <div class="chemicalenterprise-left">
             <div class="one-data">
                 <Edging  :title="'沿江化工企业“关改搬转”情况'"  :edgingWidth="'1019px'" />
-                <Echarts :autoResize="true"  :option="oneOption" height="280px"  id="onecircle"  width="383px" />
+                <div class="basebg">
+                    <div class="chemicalenterprise-data1">
+                        <Echarts    :option="oneOption" height="280px"  id="onecircle"  width="383px" />
+                        <div class="list">
+                            <span><img src="" alt="">2018列入清单</span>
+                            <span><img src="" alt="">2019完成情况</span>
+                        </div>
+                    </div>
+                    <div class="chemicalenterprise-data2">
+                        <Echarts  :option="twoOption" height="200px"  id="twocircle"  width="200px" />
+                        <div class="list-num">
+                            <div class="item">
+                                <div class="effects">478<i>家</i></div>
+                                <div>2018年列入清单</div>
+                            </div>
+                            <div class="item">
+                                <div class="effects">101<i>家</i></div>
+                                <div>2019年完成情况</div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
         <div class="chemicalenterprise-center">
@@ -23,11 +45,11 @@ export default {
         Edging
     },
     data() {
-        let xData = ['8:00-10:00','10:00-12:00','12:00-14:00','14:00-16:00','16:00-18:00'];
+        let xData = ['关闭','改造','搬迁','转产'];
         let yData =  [66,238,120,81,54];      
         return {     
             oneOption:{
-                backgroundColor: "#111c4e",
+                // backgroundColor: "#111c4e",
                 color: ['#3398DB'],
                 tooltip: {
                     trigger: 'axis',
@@ -55,17 +77,18 @@ export default {
                     gridIndex: 0,
                     data: xData,
                     axisTick: {
+                        show:false,
                         alignWithLabel: true
                     },
                     axisLine: {
                         lineStyle: {
-                            color: '#0c3b71'
+                            color: '#ffffff'
                         }
                     },
                     axisLabel: {
                         show: true,
-                        color: 'rgb(170,170,170)',
-                        fontSize: 16
+                        color: '#ffffff',
+                        fontSize: 14
                     }
                 }],
                 yAxis: [{
@@ -79,11 +102,11 @@ export default {
                         },
                         axisLine: {
                             lineStyle: {
-                                color: '#0c3b71'
+                                color: '#ffffff'
                             }
                         },
                         axisLabel: {
-                            color: 'rgb(170,170,170)',
+                            color: '#ffffff',
                             formatter: '{value}'
                         }
                     },
@@ -103,75 +126,193 @@ export default {
                         axisLabel: {
                             show: false
                         },
-                        splitArea: {
-                            show: true,
-                            areaStyle: {
-                                color: ['rgba(250,250,250,0.0)', 'rgba(250,250,250,0.05)']
-                            }
-                        }
                     }
                 ],
-                series: [{
-                        name: '办理数',
-                        type: 'bar',
-                        barWidth: '30%',
-                        xAxisIndex: 0,
-                        yAxisIndex: 0,
-                        label: {
-                            normal: {
-                                show: true,
-                                position: "top",
-                                textStyle: {
-                                    color: "#ffc72b",
-                                    fontSize: 20
+                series: [
+                {
+                    type: 'bar',
+                    barWidth: 20,
+                    data: [66, 238, 120, 54],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                color: 'white'
+                            }
+                        },                     
+                        color: new this.$echarts.graphic.LinearGradient(
+                            0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#1bb1ff'
+                                },
+                                {
+                                    offset: 1,
+                                    color: '#0c51ff'
                                 }
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: new this.$echarts.graphic.LinearGradient(
-                                    0, 0, 0, 1, [{
-                                            offset: 0,
-                                            color: '#00feff'
-                                        },
-                                        {
-                                            offset: 0.5,
-                                            color: '#027eff'
-                                        },
-                                        {
-                                            offset: 1,
-                                            color: '#0286ff'
-                                        }
-                                    ]
-                                )
-                            }
-                        },
-                        data: yData,
-                        zlevel: 11
-
+                            ]
+                        )
+                        }
                     },
-                    {
-                        name: '背景',
-                        type: 'bar',
-                        barWidth: '50%',
-                        xAxisIndex: 0,
-                        yAxisIndex: 1,
-                        barGap: '-135%',
-                        data: [100, 100, 100, 100, 100, 100, 100],
-                        itemStyle: {
-                            normal: {
-                                color: 'rgba(255,255,255,0.1)'
-                            }
-                        },
-                        zlevel: 9
+                },
+                {
+                    type: 'bar',
+                    barWidth: 20,
+                    data: [25,62,10,18],
+                    itemStyle: {
+                        normal: {
+                            color: new this.$echarts.graphic.LinearGradient(
+                                0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: '#2da23e'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: '#7be45f'
+                                    }
+                                ]
+                            )
+                        }
                     },
-
+                },
+                // {
+                //     name: '背景',
+                //     type: 'bar',
+                //     barWidth: '',
+                //     xAxisIndex: 0,
+                //     yAxisIndex: 1,
+                //     barGap: '-135%',
+                //     data: [10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10],
+                //     itemStyle: {
+                //         normal: {
+                //             color: 'rgba(10,143,255,0.1)'
+                //         }
+                //     },
+                //     zlevel: 9
+                // },                
                 ]     
+            },
+            twoOption:  {
+                series: [{
+                    type: 'liquidFill',
+                    radius: '95%',
+                    // center: ['50%', '40%'],
+                    data: [0.21],
+                    backgroundStyle: {
+                        borderWidth: 1,
+                        borderColor: new this.$echarts.graphic.LinearGradient(
+                            0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#1bb1ff'
+                                },
+                                {
+                                    offset: 1,
+                                    color: '#0c51ff'
+                                }
+                         ]),
+                        color: 'rgba(67,209,100,0)'
+                    },
+                    label: {
+                        normal: {
+                            formatter:   '21%',
+                            insideColor: 'transparent',
+                            textStyle: {
+                                fontSize: 32,
+                                color:'#ffffff',
+                                fontFamily: 'SourceHanSansCN-Bold'
+                            }
+                        }
+                    },
+                    outline: {
+                        borderDistance: 8,
+                        itemStyle: {
+                            borderColor: new this.$echarts.graphic.LinearGradient(
+                            0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#1bb1ff'
+                                },
+                                {
+                                    offset: 1,
+                                    color: '#0c51ff'
+                                }
+                         ]),
+                            borderWidth: 5
+                        }
+                    },                                                   
+                }]
             }
         }
     }
 }
 </script>
 <style lang="less" scoped>
-
+.chemicalenterprise {
+    margin-left: 42px;
+    &-left {
+        .one-data {
+            width: 1019px;
+            height: 373px;       
+            .basebg {
+                height: 334px;
+                background: url('../../assets/背景宽331.png') no-repeat;
+                .chemicalenterprise-data1 {
+                    position: relative;
+                    width: 530px;
+                    float:left;
+                    margin-top: 26px;
+                    margin-left: 40px;
+                    .list {
+                        position: absolute;
+                        top:0;
+                        left:398px;
+                        span {
+                            font-family: SourceHanSansCN-Regular;
+                            font-size: 18px;        
+                            color: #80c5ff;
+                            display: block;                
+                        }
+                        span:nth-child(1) {
+                            margin-bottom:12px;
+                        }
+                    }
+                }
+                .chemicalenterprise-data2 {
+                    position: relative;
+                    float: left;
+                    margin-left: 18px;
+                    width: 431px;
+                    #twocircle {
+                        margin-top: 67px;
+                    }
+                    .list-num {
+                        left: 240px;   
+                        top:61px;
+                        position: absolute;
+                        .item {
+                            div:nth-child(1) {
+                                font-family: DINNextW1G-MediumItalic;
+                                font-size: 54px;   
+                                color: #ffffff;         
+                                i {
+                                    font-family: SourceHanSansCN-Regular;
+                                    font-size: 28px;                            color: #ffffff;    
+                                }          
+                            }
+                            div:nth-child(2) {
+                                font-family: SourceHanSansCN-Regular;
+                                font-size: 22px;
+                                color: #80c5ff;  
+                                margin-top:19px;                          
+                            }
+                        }
+                        .item:nth-child(1) {
+                            margin-bottom: 52px;
+                        }    
+                    }
+                }                        
+            }     
+        }
+    }
+}
 </style>

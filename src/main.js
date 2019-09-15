@@ -10,7 +10,7 @@ import  router from './router';
 /* 引入echarts */
 import echarts from 'echarts'
 // eslint-disable-next-line no-unused-vars
-// import echartsLiquidfill from 'echarts-liquidfill' 
+import echartsLiquidfill from 'echarts-liquidfill' 
 
 // import animated from 'animate.css'
 
