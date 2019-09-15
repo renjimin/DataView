@@ -2,7 +2,7 @@
     <div class="overallview">
 		<div class="map">
 			<Head :headtitle='"长江大保护全景指挥"'/>
-            <SubHead :subheadtitle='"沿江化工企业关改搬转工作专题展示"' />
+            <SubHead :subheadtitle='"河道非法采砂整治专题工作"' />
 		  <div class="point" style="top: 216px;left: 1968px;"></div>
 		  <div class="point" style="top: 617px;left: 1956px;"></div>
 		  <div class="point" style="top: 780px;left: 1993px;"></div>
