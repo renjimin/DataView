@@ -17,6 +17,11 @@ export default new Router({
       path: '/chemicalenterprise',
       name: 'chemicalenterprise',
       component: () => import('../src/views/chemicalenterprise/index.vue')
-    }
+    },
+    {
+      path: '/pointSource',
+      name: 'pointSource',
+      component: () => import('../src/views/pointSource/index.vue')
+    },    
   ]
 })
