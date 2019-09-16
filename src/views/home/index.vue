@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="circle-d">
                                     <div></div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,17 +291,23 @@
 			    <Edging  :title="'新闻报道'"  :edgingWidth="'878px'" style="margin-top: 25px;" />
 			    <div style="position: relative;;width: 878px;height: 234px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);">
 			      <happy-scroll color="rgba(0,138,255,0.15)" size="10" right>
-			        <div style="width: 878px;height: 234px;z-index: 9;">
+			        <div style="width: 878px;z-index: 9;" class="moveup" ref = "moveup">
 			          <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">焦泰文调研厅及黄冈砂管执法基地</h5>
 			          <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
 			          <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;
 			                        margin-top: 4px;margin-bottom: 30px;">（省水政监察总队）近日，厅党组成员、副厅长焦泰文到厅及黄冈市河道采砂管理执法基地调研。焦泰文登上执法基地执法趸船，查看了值班值守情况，详细询问了船上执法队员的工作及生活情况，与执法队员们一一握手慰问，感谢他们为长江大保护作出的贡献。看到执法基地扣押的采运砂船，焦泰文详细询问了船只管控情况。焦泰文对执法基地执法能力建设和执法工作给予了肯定。<br>
 			          焦泰文强调，河道采砂管理事关防洪安全、通航安全和生态安全，任务艰巨，责任重大，一定要认真落实长江大保护要求，严厉打击非法采砂行为，确保良好的河道采砂管理秩序。</p>
-					  <!-- 20190915 -->
-					  <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">湖北长江沿线近500家化工企业关改搬转任务清单发布</h5>
-					  <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
-					  <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;
-					                margin-top: 4px;margin-bottom: 40px;">按照《湖北省沿江化工企业关改搬转工作方案》（鄂政发〔2018〕24号）工作要求， 湖北省经济和信息化委员会会同省发改委、省住建厅、省环保厅、省安监局汇总审核各市州政府报送的沿江化工企业关改搬转工作方案及“一企一策”任务清单的基础上，形成《湖北省沿江化工企业关改搬转任务清单（征求意见稿）》，现予以公示。公示期为2018年9月30日至10月11日。</p>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">湖北长江沿线近500家化工企业关改搬转任务清单发布</h5>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
+                <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;margin-top: 4px;margin-bottom: 40px;">按照《湖北省沿江化工企业关改搬转工作方案》（鄂政发〔2018〕24号）工作要求， 湖北省经济和信息化委员会会同省发改委、省住建厅、省环保厅、省安监局汇总审核各市州政府报送的沿江化工企业关改搬转工作方案及“一企一策”任务清单的基础上，形成《湖北省沿江化工企业关改搬转任务清单（征求意见稿）》，现予以公示。公示期为2018年9月30日至10月11日。</p>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">焦泰文调研厅及黄冈砂管执法基地</h5>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
+                <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;
+                              margin-top: 4px;margin-bottom: 30px;">（省水政监察总队）近日，厅党组成员、副厅长焦泰文到厅及黄冈市河道采砂管理执法基地调研。焦泰文登上执法基地执法趸船，查看了值班值守情况，详细询问了船上执法队员的工作及生活情况，与执法队员们一一握手慰问，感谢他们为长江大保护作出的贡献。看到执法基地扣押的采运砂船，焦泰文详细询问了船只管控情况。焦泰文对执法基地执法能力建设和执法工作给予了肯定。<br>
+                焦泰文强调，河道采砂管理事关防洪安全、通航安全和生态安全，任务艰巨，责任重大，一定要认真落实长江大保护要求，严厉打击非法采砂行为，确保良好的河道采砂管理秩序。</p>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 20px;color: #fff;line-height: 52px;margin-left: 23px;">湖北长江沿线近500家化工企业关改搬转任务清单发布</h5>
+                <h5 style="font-family: SourceHanSansCN-Bold;font-size: 14px;font-weight: normal;opacity: 0.6;margin-left: 23px;color: #fff;">2019-9-6</h5>
+                <p style="display: block;width: 828px;font-size: 18px;font-family: SourceHanSansCN-Bold;line-height: 24px;color: #80c5ff;margin: 0 auto;margin-top: 4px;margin-bottom: 40px;">按照《湖北省沿江化工企业关改搬转工作方案》（鄂政发〔2018〕24号）工作要求， 湖北省经济和信息化委员会会同省发改委、省住建厅、省环保厅、省安监局汇总审核各市州政府报送的沿江化工企业关改搬转工作方案及“一企一策”任务清单的基础上，形成《湖北省沿江化工企业关改搬转任务清单（征求意见稿）》，现予以公示。公示期为2018年9月30日至10月11日。</p>
 			        </div>
 			      </happy-scroll>
 			    </div>
@@ -336,7 +342,8 @@ export default {
         { img: 'img/形状 1207.png', num: 468, unit: '艘', desc: '集中监管采砂船舶数量', key: 2 },
         { img: 'img/形状 1208.png', num: 41, unit: '个', desc: '建立联合执法驻守点数', key: 3 }
       ],
-      stopVideo: false
+      stopVideo: false,
+      top:0
     }
   },
   mounted () {
@@ -352,6 +359,18 @@ export default {
     })
     mySwiper1.controller.control = mySwiper2;
     mySwiper2.controller.control = mySwiper1;
+    console.log(this.$refs.moveup.offsetHeight)
+    var moveup = this.$refs.moveup;
+    var tops = 40;
+    function moveUp(){
+      tops--;
+      // console.log(tops);
+      moveup.style.marginTop = tops+'px';
+      if(tops==-450){
+        tops = 0;
+      }
+    }
+    setInterval(moveUp,30);
   },
   methods: {
     initData () {
@@ -789,7 +808,7 @@ export default {
                                 vertical-align: middle;
                                 overflow: hidden;
                                  border: 40px solid lightblue;
-                                 clip: rect(0 100px 200px 0);  
+                                 clip: rect(0 100px 200px 0);
                                 box-shadow: 0 3px 3px rgba(0,0,0,.3);
                                 font-weight: 700;
                                 border-bottom: solid 3px #3f77c3;
@@ -802,9 +821,9 @@ export default {
                                     border-radius: 50%;
                                     border: 40px solid lightblue;
                                     position:absolute;
-                                    top: -10px;   
+                                    top: -10px;
                                     right: -10px;
-                                    clip: rect(0 100px 200px 0);                          
+                                    clip: rect(0 100px 200px 0);
                                 }
 
                             }
@@ -1012,7 +1031,7 @@ export default {
     }
     .right {
 		float:right;
-		margin-right: 52px;
+		margin-right: -40px;
 		margin-top: 79px;
     }
 }
@@ -1176,4 +1195,18 @@ export default {
 	        transform: translate(0px, 0px);
 	    }
 	}
+  @keyframes move3 {
+      0% {
+        margin-top: 0;
+      }
+      50% {
+        margin-top: -100%;
+      }
+      100%{
+        margin-top: 0;
+      }
+  }
+  .moveup{
+    // animation:move3 5s infinite;
+  }
 </style>

@@ -6,20 +6,20 @@
                 <div class="basebg">
                     <div class="chemicalenterprise-data1">
                         <Echarts    :option="oneOption" height="280px"  id="onecircle"  width="383px" />
-                        <div class="list">
-                            <span><img src="" alt="">2018列入清单</span>
-                            <span><img src="" alt="">2019完成情况</span>
+                        <div class="list" style="width: 153px;">
+                            <span style="width: 153px;"><i style="display: block;float: left;width: 14px;height: 14px;background: linear-gradient(0deg,#0c51ff 0%,#1bb1ff 100%);margin-top: 2px;margin-right: 5px;"></i>2018列入清单</span>
+                            <span><i style="display: block;float: left;width: 14px;height: 14px;background: linear-gradient(0deg,#7be45f 0%,#2da23e 100%);margin-top: 2px;margin-right: 5px;"></i>2019完成情况</span>
                         </div>
                     </div>
                     <div class="chemicalenterprise-data2">
                         <Echarts  :option="twoOption" height="200px"  id="twocircle"  width="200px" />
                         <div class="list-num">
                             <div class="item">
-                                <div class="effects">478<i>家</i></div>
+                                <div class="effects"><numberCrow :startVal='0' :endVal='478' :duration='3000'></numberCrow><i>家</i></div>
                                 <div>2018年列入清单</div>
                             </div>
                             <div class="item">
-                                <div class="effects">101<i>家</i></div>
+                                <div class="effects"><numberCrow :startVal='0' :endVal='101' :duration='3000'></numberCrow><i>家</i></div>
                                 <div>2019年完成情况</div>
                             </div>
                         </div>
@@ -112,11 +112,11 @@
             <Edging  :title="'企业排污口治理数据统计'"  :edgingWidth="'1018px'" style="margin-top: 25px;" />
             <div style="width: 1018px;height: 331px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);position: relative;">
               <div style="width: 196px;height: 143px;top: 100px;left: 29px;position: absolute;" class="polygon">
-                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;">352 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
+                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;" class="effects"><numberCrow :startVal='0' :endVal='352' :duration='3000'></numberCrow> <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
                 <div style="text-align: center;font-size: 20px;font-family: SourceHanSansCN-Bold;color: #80c5ff;">2018年整治数量</div>
               </div>
               <div style="width: 196px;height: 143px;top: 100px;left: 239px;position: absolute;" class="polygon">
-                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;">616 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
+                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;" class="effects"><numberCrow :startVal='0' :endVal='616' :duration='3000'></numberCrow> <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
                 <div style="text-align: center;font-size: 20px;font-family: SourceHanSansCN-Bold;color: #80c5ff;">2019年整治数量</div>
               </div>
               <div class="lableBox">
@@ -194,10 +194,12 @@
 import Echarts from '@/components/echarts/echarts'
 import Edging from '@/components/edging/index'
 import SubHead from '@/components/subheading/index'
+import numberCrow from '@/components/numberGrow/index'
 import Head from '../../components/head/index'
 export default {
   components: {
     Echarts,
+    numberCrow,
     Edging,
     SubHead,
     Head
@@ -642,7 +644,7 @@ export default {
   }
   .lableBox{
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
     width: 280px;
     height: 230px;
     margin-top:50px;

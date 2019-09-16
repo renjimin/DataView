@@ -128,8 +128,8 @@
             </div>
           </div>
           <div>
-            <Edging  :title="'专题新闻'"  :edgingWidth="'836px'" style="margin-top: 25px;" />
-            <div style="width: 836px;height: 557px;margin-top: 8px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);">
+            <Edging  :title="'专题新闻'"  :edgingWidth="'878px'" style="margin-top: 25px;" />
+            <div style="width: 878px;height: 557px;margin-top: 8px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);">
               <div id="certify" style="width: 700px;height: 240px;position: relative;margin: 0 auto;">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -151,6 +151,8 @@
             </div>
           </div>
         </div>
+
+        
     </div>
 </template>
 <script>
@@ -170,10 +172,10 @@ export default {
     SubHead,
     Head
   },
-  mounted() {
-    this.setSwiper ()
+  mounted () {
+    this.setSwiper()
   },
-  methods:{
+  methods: {
     changeVideo (e) {
       var video1 = document.getElementById("videoOne");
       if (e == 1) {
@@ -195,7 +197,7 @@ export default {
           	autoplay: {
           	    delay: 2000,
           	    stopOnLastSlide: false,
-          	    disableOnInteraction: true,
+          	    disableOnInteraction: true
           	    },
           	navigation: {
           		nextEl: '.swiper-button-next',
@@ -359,176 +361,176 @@ export default {
       return res;
     }
     return {
-      stopVideo:false,
-      dataOne:[
+      stopVideo: false,
+      dataOne: [
         {
           title: {
-                text: '66%',
-                x: 'center',
-                y: 'center',
-                textStyle: {
-                  fontWeight: 'normal',
-                  color: '#fff',
-                  fontSize: '26'
-                }
-              },
-              color: ['rgba(95, 82, 160, 0.1)'],
-              series: [{
-                name: 'Line 1',
-                type: 'pie',
-                clockWise: false,
-                radius: ['47', '57'],
-                itemStyle: {
-                  normal: {
-                    label: {
-                      show: false
-                    },
-                    labelLine: {
-                      show: false
-                    }
-                  }
-                },
-                hoverAnimation: false,
-                data: [{
-                  value: 66,
-                  name: '已使用',
-                  itemStyle: {
-                    normal: {
-                      color: { // 完成的圆环的颜色
-                        colorStops: [{
-                          offset: 0,
-                          color: '#2ea33f' // 0% 处的颜色
-                        }, {
-                          offset: 1,
-                          color: '#79e25e' // 100% 处的颜色
-                        }]
-                      },
-                      label: {
-                        show: false
-                      },
-                      labelLine: {
-                        show: false
-                      }
-                    }
-                  }
-                }, {
-                  name: '未使用',
-                  value: 36
-                }]
-              }]
+            text: '66%',
+            x: 'center',
+            y: 'center',
+            textStyle: {
+              fontWeight: 'normal',
+              color: '#fff',
+              fontSize: '26'
+            }
           },
-          {
-            title: {
-                  text: '72%',
-                  x: 'center',
-                  y: 'center',
-                  textStyle: {
-                    fontWeight: 'normal',
-                    color: '#fff',
-                    fontSize: '26'
-                  }
+          color: ['rgba(95, 82, 160, 0.1)'],
+          series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['47', '57'],
+            itemStyle: {
+              normal: {
+                label: {
+                  show: false
                 },
-                color: ['rgba(95, 82, 160, 0.1)'],
-                series: [{
-                  name: 'Line 1',
-                  type: 'pie',
-                  clockWise: false,
-                  radius: ['47', '57'],
-                  itemStyle: {
-                    normal: {
-                      label: {
-                        show: false
-                      },
-                      labelLine: {
-                        show: false
-                      }
-                    }
-                  },
-                  hoverAnimation: false,
-                  data: [{
-                    value: 72,
-                    name: '已使用',
-                    itemStyle: {
-                      normal: {
-                        color: { // 完成的圆环的颜色
-                          colorStops: [{
-                            offset: 0,
-                            color: '#ffa607' // 0% 处的颜色
-                          }, {
-                            offset: 1,
-                            color: '#ffe67d' // 100% 处的颜色
-                          }]
-                        },
-                        label: {
-                          show: false
-                        },
-                        labelLine: {
-                          show: false
-                        }
-                      }
-                    }
-                  }, {
-                    name: '未使用',
-                    value: 28
-                  }]
-                }]
-            },
-            {
-              title: {
-                    text: '75%',
-                    x: 'center',
-                    y: 'center',
-                    textStyle: {
-                      fontWeight: 'normal',
-                      color: '#fff',
-                      fontSize: '26'
-                    }
-                  },
-                  color: ['rgba(95, 82, 160, 0.1)'],
-                  series: [{
-                    name: 'Line 1',
-                    type: 'pie',
-                    clockWise: false,
-                    radius: ['47', '57'],
-                    itemStyle: {
-                      normal: {
-                        label: {
-                          show: false
-                        },
-                        labelLine: {
-                          show: false
-                        }
-                      }
-                    },
-                    hoverAnimation: false,
-                    data: [{
-                      value: 75,
-                      name: '已使用',
-                      itemStyle: {
-                        normal: {
-                          color: { // 完成的圆环的颜色
-                            colorStops: [{
-                              offset: 0,
-                              color: '#0c52ff' // 0% 处的颜色
-                            }, {
-                              offset: 1,
-                              color: '#1baeff' // 100% 处的颜色
-                            }]
-                          },
-                          label: {
-                            show: false
-                          },
-                          labelLine: {
-                            show: false
-                          }
-                        }
-                      }
-                    }, {
-                      name: '未使用',
-                      value: 25
-                    }]
-                  }]
+                labelLine: {
+                  show: false
+                }
               }
+            },
+            hoverAnimation: false,
+            data: [{
+              value: 66,
+              name: '已使用',
+              itemStyle: {
+                normal: {
+                  color: { // 完成的圆环的颜色
+                    colorStops: [{
+                      offset: 0,
+                      color: '#2ea33f' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#79e25e' // 100% 处的颜色
+                    }]
+                  },
+                  label: {
+                    show: false
+                  },
+                  labelLine: {
+                    show: false
+                  }
+                }
+              }
+            }, {
+              name: '未使用',
+              value: 36
+            }]
+          }]
+        },
+        {
+          title: {
+            text: '72%',
+            x: 'center',
+            y: 'center',
+            textStyle: {
+              fontWeight: 'normal',
+              color: '#fff',
+              fontSize: '26'
+            }
+          },
+          color: ['rgba(95, 82, 160, 0.1)'],
+          series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['47', '57'],
+            itemStyle: {
+              normal: {
+                label: {
+                  show: false
+                },
+                labelLine: {
+                  show: false
+                }
+              }
+            },
+            hoverAnimation: false,
+            data: [{
+              value: 72,
+              name: '已使用',
+              itemStyle: {
+                normal: {
+                  color: { // 完成的圆环的颜色
+                    colorStops: [{
+                      offset: 0,
+                      color: '#ffa607' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#ffe67d' // 100% 处的颜色
+                    }]
+                  },
+                  label: {
+                    show: false
+                  },
+                  labelLine: {
+                    show: false
+                  }
+                }
+              }
+            }, {
+              name: '未使用',
+              value: 28
+            }]
+          }]
+        },
+        {
+          title: {
+            text: '75%',
+            x: 'center',
+            y: 'center',
+            textStyle: {
+              fontWeight: 'normal',
+              color: '#fff',
+              fontSize: '26'
+            }
+          },
+          color: ['rgba(95, 82, 160, 0.1)'],
+          series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: false,
+            radius: ['47', '57'],
+            itemStyle: {
+              normal: {
+                label: {
+                  show: false
+                },
+                labelLine: {
+                  show: false
+                }
+              }
+            },
+            hoverAnimation: false,
+            data: [{
+              value: 75,
+              name: '已使用',
+              itemStyle: {
+                normal: {
+                  color: { // 完成的圆环的颜色
+                    colorStops: [{
+                      offset: 0,
+                      color: '#0c52ff' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#1baeff' // 100% 处的颜色
+                    }]
+                  },
+                  label: {
+                    show: false
+                  },
+                  labelLine: {
+                    show: false
+                  }
+                }
+              }
+            }, {
+              name: '未使用',
+              value: 25
+            }]
+          }]
+        }
       ],
       oneOption: {
         legend: {
