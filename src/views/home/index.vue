@@ -174,10 +174,19 @@
                             <div class="heart_box">
                             </div>
                             <div class="route">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                                <div class="circle-a">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="circle-b">
+                                    <div></div>
+                                </div>
+                                <div class="circle-c">
+                                    <div></div>
+                                </div>
+                                <div class="circle-d">
+                                    <div></div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -758,17 +767,46 @@ export default {
                             position: relative;
                             width: 200px;
                             transform-style: preserve-3d;
-                             animation:move 50s linear infinite;
-                            div {
-                                position: absolute;
-                                height:76px;
-                                margin-left: 62px;
-                                margin-top: -30px;
-                                background: url('../../assets/微信图片_20190915142704.png') no-repeat;
-                                transition: all 1s ease;
-                            }
-                            div:nth-child(1){
-                               transform: rotateY(90deg) ;
+                            //  animation:move 50s linear infinite;
+                            // div {
+                            //     position: absolute;
+                            //     height:76px;
+                            //     margin-left: 62px;
+                            //     margin-top: -30px;
+                            // }
+                            .circle-a{
+                                div:nth-child(1) {
+                                display: inline-block;
+                                text-decoration: none;
+                                background: #63a5ff;
+                                color: #306fc3;
+                                width: 100px;
+                                font-size: 18px;
+                                height: 100px;
+                                line-height: 100px;
+                                border-radius: 50%;
+                                text-align: center;
+                                vertical-align: middle;
+                                overflow: hidden;
+                                 border: 40px solid lightblue;
+                                 clip: rect(0 100px 200px 0);  
+                                box-shadow: 0 3px 3px rgba(0,0,0,.3);
+                                font-weight: 700;
+                                border-bottom: solid 3px #3f77c3;
+                                text-shadow: 1px 1px 1px rgba(255,255,255,.65);
+                                transition: .4s;
+                                }
+                                div:nth-child(2) {
+                                    width: 220px;
+                                    height: 220px;
+                                    border-radius: 50%;
+                                    border: 40px solid lightblue;
+                                    position:absolute;
+                                    top: -10px;   
+                                    right: -10px;
+                                    clip: rect(0 100px 200px 0);                          
+                                }
+
                             }
                              div:nth-child(2){
                                  margin-top: -164px;

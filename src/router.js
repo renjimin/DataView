@@ -22,6 +22,11 @@ export default new Router({
       path: '/pointSource',
       name: 'pointSource',
       component: () => import('../src/views/pointSource/index.vue')
-    },    
+    },  
+    {
+      path: '/emergencydepartment',
+      name: 'emergencydepartment',
+      component: () => import('../src/views/emergencydepartment/index.vue')
+    },      
   ]
 })
