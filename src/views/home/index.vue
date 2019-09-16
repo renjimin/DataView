@@ -15,7 +15,13 @@
 		  <div class="point" style="top: 879px;left: 3140px;"></div>
 		  <div class="circleBox" style="left: 2110px;top: 642px;">
 		    <div class="textBox"></div>
-		    <div class="circleOne"></div>
+		    <div class="circleOne">
+          <div style="width: 44px;height: 22px;border-radius: 50%;box-sizing: border-box;z-index: 2;position: absolute;top: 0;">
+            <div style="width: 22px;height: 11px;margin: 0 auto;border-radius: 50%;margin-top: 4px;background: rgba(255,255,255,0.4);border: 1px solid rgba(255,255,255,0.6);"></div>
+          </div>
+          <span></span>
+          <span></span>
+        </div>
 		  </div>
 		</div>
 		<div style="position: absolute;width: 100px;height: 100px;bottom: 20px;right: 1400px;background: #021e37;"></div>
@@ -298,55 +304,55 @@ import { HappyScroll } from 'vue-happy-scroll'
 import Swiper from 'swiper'; // 20190915
 import 'vue-happy-scroll/docs/happy-scroll.css'
 export default {
-    components: {
-		Head,
-        SubHead,
-        Edging,
-        TurnCircle,
-		HappyScroll,
-        numberCrow,
-		Swiper
-    },
-    data() {
-        return {
-            oneData:[
-                {img:'img/形状 1209.png',num:8612,unit:'次',desc:'日常执法巡查数量',key:1},
-                {img:'img/形状 1207.png',num:468,unit:'艘',desc:'集中监管采砂船舶数量',key:2},
-                {img:'img/形状 1208.png',num:41,unit:'个',desc:'建立联合执法驻守点数',key:3},
-            ],
-            stopVideo:false
-        }
-    },
-    mounted () {
-      this.initData();
-      // 20190915
-      var mySwiper1 = new Swiper('.swiperOne', {
-        loop: true,
-        autoplay: true
-      })
-      var mySwiper2 = new Swiper('.swiperTwo', {
-        loop: true,
-        autoplay: true
-      })
-      mySwiper1.controller.control = mySwiper2;
-      mySwiper2.controller.control = mySwiper1;
-    },
-    methods: {
-      initData () {
+  components: {
+    Head,
+    SubHead,
+    Edging,
+    TurnCircle,
+    HappyScroll,
+    numberCrow,
+    Swiper
+  },
+  data () {
+    return {
+      oneData: [
+        { img: 'img/形状 1209.png', num: 8612, unit: '次', desc: '日常执法巡查数量', key: 1 },
+        { img: 'img/形状 1207.png', num: 468, unit: '艘', desc: '集中监管采砂船舶数量', key: 2 },
+        { img: 'img/形状 1208.png', num: 41, unit: '个', desc: '建立联合执法驻守点数', key: 3 }
+      ],
+      stopVideo: false
+    }
+  },
+  mounted () {
+    this.initData();
+    // 20190915
+    var mySwiper1 = new Swiper('.swiperOne', {
+      loop: true,
+      autoplay: true
+    })
+    var mySwiper2 = new Swiper('.swiperTwo', {
+      loop: true,
+      autoplay: true
+    })
+    mySwiper1.controller.control = mySwiper2;
+    mySwiper2.controller.control = mySwiper1;
+  },
+  methods: {
+    initData () {
 
-      },
-      // 20190915
-      changeVideo (e) {
-        var video1 = document.getElementById("videoOne");
-        if (e == 1) {
-          video1.pause();
-          this.stopVideo = true;
-        } else if (e == 0) {
-          video1.play();
-          this.stopVideo = false;
-        }
+    },
+    // 20190915
+    changeVideo (e) {
+      var video1 = document.getElementById("videoOne");
+      if (e == 1) {
+        video1.pause();
+        this.stopVideo = true;
+      } else if (e == 0) {
+        video1.play();
+        this.stopVideo = false;
       }
     }
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -971,6 +977,19 @@ export default {
 	        transform: scale(1.2);
 	    }
 	}
+  @keyframes mymove2{
+      0% {
+          transform: scale(.6);
+          opacity: 0;
+      }
+      10% {
+           opacity: .8;
+      }
+      100% {
+          transform: scale(1);
+          opacity: 0;
+      }
+  }
 	@-webkit-keyframes mymove{
 	    0%{
 	        transform: scale(1);
@@ -1038,11 +1057,24 @@ export default {
 	  .circleOne{
 	    width: 70px;
 	    height: 34px;
+      position: relative;
 	    margin: 0 auto;
-	    background: url(../../assets/圈拷贝7.png) no-repeat center;
-	    animation:mymove 3s infinite;
-	    animation-direction:alternate;/*轮流反向播放动画。*/
-	    animation-timing-function: ease-in-out; /*动画的速度曲线*/
+	    // background: url(../../assets/圈拷贝7.png) no-repeat center;
+	    // animation:mymove 3s infinite;
+	    // animation-timing-function: ease-in-out; /*动画的速度曲线*/
+      span{
+        position: absolute;
+        width: 44px;
+        height: 22px;
+        border-radius: 50%;
+        background: #fff;
+        top: 0;
+        z-index: 1;
+         -webkit-animation: mymove2 3s forwards infinite;
+      }
+      span:nth-child(2){
+          -webkit-animation-delay: 1.5s; /*第二个span动画延迟1.5秒*/
+      }
 	  }
 	}
 

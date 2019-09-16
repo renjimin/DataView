@@ -28,7 +28,7 @@
                 </div>
             </div>
           <!-- 沿江关改搬转-涉长江生态环境资源刑事案件 -->
-          <!-- <div>
+          <div>
             <Edging  :title="'涉长江生态环境资源刑事案件数量'"  :edgingWidth="'1018px'" style="margin-top: 25px;" />
             <div style="width: 1018px;height: 292px;margin-top: 8px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);">
               <div class="box1" style="margin-top: 60px;margin-left: 30px;">
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
           <!-- 排污口治理 -->
           <div>
             <Edging  :title="'企业排污口治理数据统计'"  :edgingWidth="'1018px'" style="margin-top: 25px;" />
@@ -119,8 +119,18 @@
                 <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;">616 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
                 <div style="text-align: center;font-size: 20px;font-family: SourceHanSansCN-Bold;color: #80c5ff;">2019年整治数量</div>
               </div>
-
-              <div style="width: 230px;height: 230px;float: right;margin-top: 60px;margin-right: 340px;" class="sectorBox">
+              <div class="lableBox">
+                <ul class="labelList">
+                  <li><span style="background: linear-gradient(0deg,#ffa505 0%,#ffc743 27%,#ffe880 100%);"></span> 登记和手续补办</li>
+                  <li><span style="background: linear-gradient(0deg,#0c9bff 0%,#7bd2ff 100%);"></span> 补办登记和审批手续</li>
+                  <li><span style="background: linear-gradient(0deg,#ff7b05 0%,#ffc280 100%);"></span> 关停封堵或并入污水处理厂</li>
+                  <li><span style="background: linear-gradient(180deg,#56d7d2 54%,#0cb281 100%);"></span> 关停封堵、迁建改造等</li>
+                </ul>
+                <div class="labelNum">
+                  <p>2019年整治数量 <span>616</span> 个</p>
+                </div>
+              </div>
+              <div style="width: 230px;height: 230px;float: right;margin-right: 20px;" class="sectorBox">
                 <div style="width: 214px;height: 212px;position: relative;overflow: hidden;">
                   <div class="sector1"></div>
                   <div class="sector2"></div>
@@ -181,231 +191,231 @@
     </div>
 </template>
 <script>
-  import Echarts from '@/components/echarts/echarts'
-  import Edging from '@/components/edging/index'
-  import SubHead from '@/components/subheading/index'
-  import Head from '../../components/head/index'
-  export default {
-      components: {
-          Echarts,
-          Edging,
-          SubHead,
-          Head
-      },
-      methods:{
-        changeVideo (e) {
-          var video1 = document.getElementById("videoOne");
-          if (e == 1) {
-            video1.pause();
-            this.stopVideo = true;
-          } else if (e == 0) {
-            video1.play();
-            this.stopVideo = false;
+import Echarts from '@/components/echarts/echarts'
+import Edging from '@/components/edging/index'
+import SubHead from '@/components/subheading/index'
+import Head from '../../components/head/index'
+export default {
+  components: {
+    Echarts,
+    Edging,
+    SubHead,
+    Head
+  },
+  methods: {
+    changeVideo (e) {
+      var video1 = document.getElementById("videoOne");
+      if (e == 1) {
+        video1.pause();
+        this.stopVideo = true;
+      } else if (e == 0) {
+        video1.play();
+        this.stopVideo = false;
+      }
+    }
+  },
+  data () {
+    let xData = ['关闭', '改造', '搬迁', '转产'];
+    let yData =  [66, 238, 120, 81, 54];
+    return {
+      stopVideo: false,
+      oneOption: {
+        // backgroundColor: "#111c4e",
+        color: ['#3398DB'],
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line',
+            lineStyle: {
+              opacity: 0
+            }
+          },
+          formatter: function (prams) {
+            return "办理数：" + prams[0].data
+          }
+        },
+        grid: {
+          left: '0%',
+          right: '0%',
+          bottom: '5%',
+          top: '7%',
+          height: '85%',
+          containLabel: true,
+          z: 22
+        },
+        xAxis: [{
+          type: 'category',
+          gridIndex: 0,
+          data: xData,
+          axisTick: {
+            show: false,
+            alignWithLabel: true
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisLabel: {
+            show: true,
+            color: '#ffffff',
+            fontSize: 14
+          }
+        }],
+        yAxis: [{
+          type: 'value',
+          gridIndex: 0,
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisLabel: {
+            color: '#ffffff',
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          gridIndex: 0,
+          splitNumber: 12,
+          splitLine: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            show: false
           }
         }
-      },
-      data() {
-          let xData = ['关闭','改造','搬迁','转产'];
-          let yData =  [66,238,120,81,54];
-          return {
-            stopVideo:false,
-              oneOption:{
-                  // backgroundColor: "#111c4e",
-                  color: ['#3398DB'],
-                  tooltip: {
-                      trigger: 'axis',
-                      axisPointer: {
-                          type: 'line',
-                          lineStyle: {
-                              opacity: 0
-                          }
-                      },
-                      formatter: function(prams) {
-                          return "办理数：" + prams[0].data
-                      }
-                  },
-                  grid: {
-                      left: '0%',
-                      right: '0%',
-                      bottom: '5%',
-                      top: '7%',
-                      height: '85%',
-                      containLabel: true,
-                      z: 22
-                  },
-                  xAxis: [{
-                      type: 'category',
-                      gridIndex: 0,
-                      data: xData,
-                      axisTick: {
-                          show:false,
-                          alignWithLabel: true
-                      },
-                      axisLine: {
-                          lineStyle: {
-                              color: '#ffffff'
-                          }
-                      },
-                      axisLabel: {
-                          show: true,
-                          color: '#ffffff',
-                          fontSize: 14
-                      }
-                  }],
-                  yAxis: [{
-                          type: 'value',
-                          gridIndex: 0,
-                          splitLine: {
-                              show: false
-                          },
-                          axisTick: {
-                              show: false
-                          },
-                          axisLine: {
-                              lineStyle: {
-                                  color: '#ffffff'
-                              }
-                          },
-                          axisLabel: {
-                              color: '#ffffff',
-                              formatter: '{value}'
-                          }
-                      },
-                      {
-                          type: 'value',
-                          gridIndex: 0,
-                          splitNumber: 12,
-                          splitLine: {
-                              show: false
-                          },
-                          axisLine: {
-                              show: false
-                          },
-                          axisTick: {
-                              show: false
-                          },
-                          axisLabel: {
-                              show: false
-                          },
-                      }
-                  ],
-                  series: [
-                  {
-                      type: 'bar',
-                      barWidth: 20,
-                      data: [66, 238, 120, 54],
-                      itemStyle: {
-                          normal: {
-                              label: {
-                              show: true,
-                              position: 'top',
-                              textStyle: {
-                                  color: 'white'
-                              }
-                          },
-                          color: new this.$echarts.graphic.LinearGradient(
-                              0, 0, 0, 1, [{
-                                      offset: 0,
-                                      color: '#1bb1ff'
-                                  },
-                                  {
-                                      offset: 1,
-                                      color: '#0c51ff'
-                                  }
-                              ]
-                          )
-                          }
-                      },
+        ],
+        series: [
+          {
+            type: 'bar',
+            barWidth: 20,
+            data: [66, 238, 120, 54],
+            itemStyle: {
+              normal: {
+                label: {
+                  show: true,
+                  position: 'top',
+                  textStyle: {
+                    color: 'white'
+                  }
+                },
+                color: new this.$echarts.graphic.LinearGradient(
+                  0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#1bb1ff'
                   },
                   {
-                      type: 'bar',
-                      barWidth: 20,
-                      data: [25,62,10,18],
-                      itemStyle: {
-                          normal: {
-                              color: new this.$echarts.graphic.LinearGradient(
-                                  0, 0, 0, 1, [{
-                                          offset: 0,
-                                          color: '#2da23e'
-                                      },
-                                      {
-                                          offset: 1,
-                                          color: '#7be45f'
-                                      }
-                                  ]
-                              )
-                          }
-                      },
-                  },
-                  // {
-                  //     name: '背景',
-                  //     type: 'bar',
-                  //     barWidth: '',
-                  //     xAxisIndex: 0,
-                  //     yAxisIndex: 1,
-                  //     barGap: '-135%',
-                  //     data: [10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10],
-                  //     itemStyle: {
-                  //         normal: {
-                  //             color: 'rgba(10,143,255,0.1)'
-                  //         }
-                  //     },
-                  //     zlevel: 9
-                  // },
+                    offset: 1,
+                    color: '#0c51ff'
+                  }
                   ]
-              },
-              twoOption:  {
-                  series: [{
-                      type: 'liquidFill',
-                      radius: '95%',
-                      // center: ['50%', '40%'],
-                      data: [0.21],
-                      backgroundStyle: {
-                          borderWidth: 1,
-                          borderColor: new this.$echarts.graphic.LinearGradient(
-                              0, 0, 0, 1, [{
-                                      offset: 0,
-                                      color: '#1bb1ff'
-                                  },
-                                  {
-                                      offset: 1,
-                                      color: '#0c51ff'
-                                  }
-                           ]),
-                          color: 'rgba(67,209,100,0)'
-                      },
-                      label: {
-                          normal: {
-                              formatter:   '21%',
-                              insideColor: 'transparent',
-                              textStyle: {
-                                  fontSize: 32,
-                                  color:'#ffffff',
-                                  fontFamily: 'SourceHanSansCN-Bold'
-                              }
-                          }
-                      },
-                      outline: {
-                          borderDistance: 8,
-                          itemStyle: {
-                              borderColor: new this.$echarts.graphic.LinearGradient(
-                              0, 0, 0, 1, [{
-                                      offset: 0,
-                                      color: '#1bb1ff'
-                                  },
-                                  {
-                                      offset: 1,
-                                      color: '#0c51ff'
-                                  }
-                           ]),
-                              borderWidth: 5
-                          }
-                      },
-                  }]
+                )
               }
+            }
+          },
+          {
+            type: 'bar',
+            barWidth: 20,
+            data: [25, 62, 10, 18],
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                  0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#2da23e'
+                  },
+                  {
+                    offset: 1,
+                    color: '#7be45f'
+                  }
+                  ]
+                )
+              }
+            }
           }
+          // {
+          //     name: '背景',
+          //     type: 'bar',
+          //     barWidth: '',
+          //     xAxisIndex: 0,
+          //     yAxisIndex: 1,
+          //     barGap: '-135%',
+          //     data: [10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10,10, 10, 10, 10, 10, 10, 10],
+          //     itemStyle: {
+          //         normal: {
+          //             color: 'rgba(10,143,255,0.1)'
+          //         }
+          //     },
+          //     zlevel: 9
+          // },
+        ]
+      },
+      twoOption: {
+        series: [{
+          type: 'liquidFill',
+          radius: '95%',
+          // center: ['50%', '40%'],
+          data: [0.21],
+          backgroundStyle: {
+            borderWidth: 1,
+            borderColor: new this.$echarts.graphic.LinearGradient(
+              0, 0, 0, 1, [{
+                offset: 0,
+                color: '#1bb1ff'
+              },
+              {
+                offset: 1,
+                color: '#0c51ff'
+              }
+              ]),
+            color: 'rgba(67,209,100,0)'
+          },
+          label: {
+            normal: {
+              formatter: '21%',
+              insideColor: 'transparent',
+              textStyle: {
+                fontSize: 32,
+                color: '#ffffff',
+                fontFamily: 'SourceHanSansCN-Bold'
+              }
+            }
+          },
+          outline: {
+            borderDistance: 8,
+            itemStyle: {
+              borderColor: new this.$echarts.graphic.LinearGradient(
+                0, 0, 0, 1, [{
+                  offset: 0,
+                  color: '#1bb1ff'
+                },
+                {
+                  offset: 1,
+                  color: '#0c51ff'
+                }
+                ]),
+              borderWidth: 5
+            }
+          }
+        }]
       }
+    }
   }
+}
 </script>
 <style lang="less" scoped>
 .chemicalenterprise {
@@ -627,6 +637,51 @@
   .sectorBox{
     background: url(../../assets/统计.png)no-repeat;
     background-position: 12px 6px;
+    margin-top: 50px;
+    // margin-right: 300px;
+  }
+  .lableBox{
+    float: right;
+    margin-right: 20px;
+    width: 280px;
+    height: 230px;
+    margin-top:50px;
+    .labelList{
+      height: 120px;
+      width: 280px;
+      li{
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        font-family: SourceHanSansCN-Regular;
+        color: #80c5ff;
+        span{
+          display: block;
+          width: 14px;
+          height: 14px;
+          margin-top: 9px;
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
+    .labelNum{
+      width: 273px;
+      height: 60px;
+      background: url(../../assets/矩形273.png);
+      margin-top:34px;
+      p{
+        text-align: center;
+        font-size: 16px;
+        color: #80c5ff;
+        line-height: 50px;
+        span{
+          font-size: 28px;
+          color: #fff;
+        }
+      }
+    }
   }
   .sector1{
     position: absolute;
