@@ -15,11 +15,11 @@
                         <Echarts  :option="twoOption" height="200px"  id="twocircle"  width="200px" />
                         <div class="list-num">
                             <div class="item">
-                                <div class="effects">478<i>家</i></div>
+                                <div class="effects-small">478<i>家</i></div>
                                 <div>2018年列入清单</div>
                             </div>
                             <div class="item">
-                                <div class="effects">101<i>家</i></div>
+                                <div class="effects-small">101<i>家</i></div>
                                 <div>2019年完成情况</div>
                             </div>
                         </div>
@@ -112,22 +112,22 @@
             <Edging  :title="'企业排污口治理数据统计'"  :edgingWidth="'1018px'" style="margin-top: 25px;" />
             <div style="width: 1018px;height: 331px;background:linear-gradient(180deg,rgba(0,138,255,0),rgba(0,138,255,0.1);position: relative;">
               <div style="width: 196px;height: 143px;top: 100px;left: 29px;position: absolute;" class="polygon">
-                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;">352 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
+                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;" class="effects-small">352 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
                 <div style="text-align: center;font-size: 20px;font-family: SourceHanSansCN-Bold;color: #80c5ff;">2018年整治数量</div>
               </div>
               <div style="width: 196px;height: 143px;top: 100px;left: 239px;position: absolute;" class="polygon">
-                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;">616 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
+                <div style="width: 100%;font-size: 29px;line-height: 40px;font-family: DINNextW1G-MediumItalic;text-align: center;color: #fff;margin-top: 31px;" class="effects-small">616 <span style="font-size: 18px;font-family: SourceHanSansCN-Medium;">处</span></div>
                 <div style="text-align: center;font-size: 20px;font-family: SourceHanSansCN-Bold;color: #80c5ff;">2019年整治数量</div>
               </div>
               <div class="lableBox">
                 <ul class="labelList">
                   <li><span style="background: linear-gradient(0deg,#ffa505 0%,#ffc743 27%,#ffe880 100%);"></span> 登记和手续补办</li>
-                  <li><span style="background: linear-gradient(0deg,#0c9bff 0%,#7bd2ff 100%);"></span> 补办登记和审批手续</li>
+                  <li><span style="background: linear-gradient(0deg,#0c9bff 0%,#7bd2ff 100%);	font-family: SourceHanSansCN-Regular;"></span> 补办登记和审批手续</li>
                   <li><span style="background: linear-gradient(0deg,#ff7b05 0%,#ffc280 100%);"></span> 关停封堵或并入污水处理厂</li>
                   <li><span style="background: linear-gradient(180deg,#56d7d2 54%,#0cb281 100%);"></span> 关停封堵、迁建改造等</li>
                 </ul>
                 <div class="labelNum">
-                  <p>2019年整治数量 <span>616</span> 个</p>
+                  <p style="font-family:SourceHanSansCN-Regular">2019年整治数量 <span  style="font-family:DINNextW1G-MediumItalic">616</span> 个</p>
                 </div>
               </div>
               <div style="width: 230px;height: 230px;float: right;margin-right: 20px;" class="sectorBox">
@@ -191,6 +191,7 @@
     </div>
 </template>
 <script>
+import NumberScoll from '@/components/numberScoll/index'
 import Echarts from '@/components/echarts/echarts'
 import Edging from '@/components/edging/index'
 import SubHead from '@/components/subheading/index'
@@ -200,7 +201,8 @@ export default {
     Echarts,
     Edging,
     SubHead,
-    Head
+    Head,
+    NumberScoll
   },
   methods: {
     changeVideo (e) {

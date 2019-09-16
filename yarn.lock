@@ -3933,6 +3933,11 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+gelerator@^2.1.2:
+  version "2.2.2"
+  resolved "https://registry.npm.taobao.org/gelerator/download/gelerator-2.2.2.tgz#0d9062bc6ac24fe1d28def173931a75b548a5b00"
+  integrity sha1-DZBivGrCT+HSje8XOTGnW1SKWwA=
+
 get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/get-caller-file/download/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
@@ -5843,6 +5848,13 @@ num2fraction@^1.2.2:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/num2fraction/download/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
+
+number-flip@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/number-flip/download/number-flip-1.1.4.tgz#44c4aa7c508f767555fc25747252c3ee04f56806"
+  integrity sha1-RMSqfFCPdnVV/CV0clLD7gT1aAY=
+  dependencies:
+    gelerator "^2.1.2"
 
 number-is-nan@^1.0.0:
   version "1.0.1"
