@@ -152,9 +152,16 @@
                              <span></span>
                              <span></span>
                          </div>
-                        <!-- <div class="companydiV">
-                                    <img class="imgcompany" src="img/微信图片_20190914143725.png" alt="">
-                        </div>                          -->
+                        <div class="companydiV">
+                            <div class="heart_box">
+                            </div>    
+                            <div class="route">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>                                
+                            </div>                        
+                        </div>                         
                     </div>               
                 </div>
                 <div class="clear"></div>
@@ -669,7 +676,49 @@ export default {
                         }                        
                     }
                     .companydiV{
-                        transform: skewY(0) rotateZ(88deg) rotateX(8deg) rotateY(-79deg);
+                        height:100px;
+                        position: relative;
+                        .heart_box {
+                            height:76px;
+                            margin-left: 110px;
+                            margin-top: -45px;                                
+                            background: url('../../assets/微信图片_20190915142642.png') no-repeat;
+                        }
+                        .route {
+                            position: relative;
+                            width: 200px;
+                            transform-style: preserve-3d;                           
+                             animation:move 50s linear infinite;
+                            div {
+                                position: absolute;
+                                height:76px;
+                                margin-left: 62px;
+                                margin-top: -30px;                                
+                                background: url('../../assets/微信图片_20190915142704.png') no-repeat;
+                                transition: all 1s ease;
+                            }
+                            div:nth-child(1){
+                               transform: rotateY(90deg) ;
+                            }
+                             div:nth-child(2){
+                                 margin-top: -164px;
+                               transform: rotateX(180deg) translateZ(50px);
+                            }
+                            div:nth-child(3){
+                               transform:rotateY(-90deg) translateZ(50px);
+                            }
+                            div:nth-child(4){
+                               transform:rotateY(90deg) translateZ(50px);
+                            }                           
+                        }
+                        @keyframes move{
+                            0%{
+                                transform: rotateX(13deg) rotateY(0deg);
+                            }
+                            100%{
+                                transform:rotateX(13deg) rotateY(360deg);
+                            }
+                        }                        
                     }       
                      .imgcompany{
                         /* transform: rotate(25deg); */

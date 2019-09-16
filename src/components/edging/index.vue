@@ -20,7 +20,7 @@ export default {
     .panel{
         height: 10px;
         width: 497px;
-        border-bottom: 1px solid #7b7f83;
+        border-bottom: 1px solid #008aff;
         position: relative;
     }
     .panel::after{
