@@ -22,10 +22,9 @@ export default {
 	width: 736px;
     height: 48px;    
     margin:0 auto;
-display:inline-block; 
- zoom:1;
+    display: flex;
+    justify-content: center;
     &-left {
-        float: left;
         width: 50px;
         img {
             margin-top:18px;
@@ -35,7 +34,6 @@ display:inline-block;
     }
     &-center {
         text-align: center;   
-        float: left;
         span{
             font-family: SourceHanSansCN-Medium;
             font-size: 38px; 
@@ -46,7 +44,6 @@ display:inline-block;
     }
     &-right {
         width: 27px;
-        float: left;
         img {
             // height: 48px;
             margin-top:18px;
